@@ -1,19 +1,27 @@
-import { app } from "./app.js";
-import dotenv from "dotenv";
-import connectDb from "./db/connectDb.js";
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv"
+import cookieparser from "cookie-parser";
 
 
-dotenv.config({
-    path: "./.env",
-});
+dotenv.config(
+    {path: "./.env"}
+);
 
-
-connectDb()
+mongoose
+.connect(process.env.MONGO_URI)
 .then(() => {
-    app.listen(process.env.PORT || 8080, () => {
-        console.log(`Server running on port ${process.env.PORT}`);
-    })
+    console.log("MongoDB connected");
 })
-.catch((error) => {
-    console.log("MongoDB Connection ERROR!! ", error);
+.catch((err) => console.log(err));
+
+
+const app = express();
+app.use(express.json());
+app.use(cookieparser());
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server started on port ${process.env.PORT}`);
 })
+
+// app.use("/api/v1/user" , userRotes);
