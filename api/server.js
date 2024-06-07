@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 import cookieparser from "cookie-parser";
+import authRouter from './routes/auth.routes.js'
 
 
 dotenv.config(
@@ -20,8 +21,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieparser());
 
+
+
 app.listen(process.env.PORT, () => {
     console.log(`Server started on port ${process.env.PORT}`);
 })
 
-// app.use("/api/v1/user" , userRotes);
+
+//auth route import
+
+app.use("/api/v1/auth" , authRouter);
