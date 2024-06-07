@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import {signInFailure, signInSuccess, signInStart} from "../redux/user/user.slice.js"
+import OAuth from '../components/OAuth.jsx'
 
 export default function SignIn() {
 
@@ -30,8 +31,6 @@ export default function SignIn() {
 
             const data = res.data;
             console.log(data);
-
-          
 
             if (data.success === false) {
               dispatch(signInFailure(data));
@@ -68,6 +67,7 @@ export default function SignIn() {
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
         {loading ? 'Loading...' : 'Sign In'}
         </button>
+        <OAuth/>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have not an account?</p>
