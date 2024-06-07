@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export default function SignUp() {
@@ -7,7 +7,7 @@ export default function SignUp() {
     const [formData, setFormData] = useState({});
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({
@@ -34,6 +34,7 @@ export default function SignUp() {
 
             if (data.success === true) {
                 setError(false);
+                navigate('/sign-in', {replace: true});
                 return;
             }
             
@@ -71,7 +72,7 @@ export default function SignUp() {
           onChange={handleChange}
         />
         <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-          Sign up
+        {loading ? 'Loading...' : 'Sign Up'}
         </button>
       </form>
       <div className='flex gap-2 mt-5'>
