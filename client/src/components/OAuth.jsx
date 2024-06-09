@@ -16,7 +16,7 @@ export default function OAuth() {
             const provider = new GoogleAuthProvider();
             const auth = getAuth(app);
             const result = signInWithPopup(auth, provider);
-            console.log(result);
+            // console.log(result);
 
             const res = await axios.post("/api/v1/auth/google-signin",  {
                 name: (await result).user.displayName,
@@ -29,7 +29,7 @@ export default function OAuth() {
             });
 
             const data = res.data;
-            console.log("google data", data);
+            // console.log("google data", data);
             dispatch(signInSuccess(data));
             
             navigate('/')

@@ -30,8 +30,10 @@ export const signUp = async (req, res) => {
       message: "User created successfully",
     });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: error || "Internal server error" });
+    // console.log(error);
+    res
+    .status(500)
+    .json({ error: error || "Internal server error" });
   }
 };
 
@@ -52,7 +54,7 @@ export const signIn = async (req, res, next) => {
     }
 
     const token = jwt.sign({ _id: validUser._id }, process.env.JWT_SECRET);
-    console.log(token);
+    // console.log(token);
 
     // const {password : hashedPassword, ...rest} = validUser._doc;
 

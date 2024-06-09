@@ -50,7 +50,7 @@ export default function Profile() {
     // console.log(fileName);
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, image);
-    console.log(uploadTask);
+    // console.log(uploadTask);
 
     uploadTask.on(
       "state_changed",
@@ -91,7 +91,7 @@ export default function Profile() {
       })
 
       const data = res.data;
-      console.log(data);
+      // console.log(data);
       if(data.success === false) {
         dispatch(updateFailure(data));
         return;
