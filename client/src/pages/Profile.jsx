@@ -14,8 +14,8 @@ export default function Profile() {
   const { currentUser } = useSelector((state) => state.user);
 
   const [formData, setFormData] = useState({
-    ...currentUser
-  })
+    ...currentUser,
+  });
   // console.log(formData);
   const [image, setImage] = useState(undefined);
   const [uploading, setUploading] = useState(0);
@@ -37,19 +37,22 @@ export default function Profile() {
     const uploadTask = uploadBytesResumable(storageRef, image);
     console.log(uploadTask);
 
-    uploadTask.on("state_changed", (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      setUploading(Math.round(progress));
-      // console.log(progress);
-    },
-    (error) => {
-      setImageError(true);
-    },
-    () => {
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-        setFormData({ ...formData, profilePic: downloadURL })
-      );
-    }
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploading(Math.round(progress));
+        // console.log(progress);
+      },
+      (error) => {
+        setImageError(true);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
+          setFormData({ ...formData, profilePic: downloadURL })
+        );
+      }
     );
   };
 
@@ -67,20 +70,22 @@ export default function Profile() {
           onChange={(e) => setImage(e.target.files[0])}
         />
         <img
-          src={formData.profilePic ||currentUser.profilePic}
+          src={formData.profilePic || currentUser.profilePic}
           alt="profile"
           className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
           onClick={() => fileRef.current.click()}
         />
-        <p className='text-sm self-center'>
+        <p className="text-sm self-center">
           {imageError ? (
-            <span className='text-red-700' >Error uploading image (file size not supported(2mb))</span>
+            <span className="text-red-700">
+              Error uploading image (file size not supported(2mb))
+            </span>
           ) : uploading > 0 && uploading < 100 ? (
-            <span >{`Uploading:  ${uploading}%`}</span>
+            <span>{`Uploading:  ${uploading}%`}</span>
           ) : uploading === 100 ? (
-            <span className='text-green-700'>Image uploaded</span>
+            <span className="text-green-700">Image uploaded</span>
           ) : (
-            ''
+            ""
           )}
         </p>
         <input
