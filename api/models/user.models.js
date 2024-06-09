@@ -17,7 +17,7 @@ const userSchema = new Schema({
     },
     profilePic: {
         type: String,
-        default: "https://static-00.iconduck.com/assets.00/profile-circle-icon-512x512-zxne30hp.png"
+        default: "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     }
 }, {
     timestamps: true
