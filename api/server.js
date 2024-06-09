@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import cookieparser from "cookie-parser";
 import authRouter from './routes/auth.routes.js'
 import userRouter from "./routes/user.routes.js"
+import path from "path";
 
 
 dotenv.config(
@@ -17,9 +18,18 @@ mongoose
 })
 .catch((err) => console.log(err));
 
+//directory for static files
+const __dirname = path.resolve();
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+})
 app.use(express.json());
+
 app.use(cookieparser());
 
 
