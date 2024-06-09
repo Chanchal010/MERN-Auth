@@ -13,43 +13,47 @@ export default function Profile() {
   const fileRef = useRef(null);
   const { currentUser } = useSelector((state) => state.user);
 
+  const [formData, setFormData] = useState({
+    ...currentUser
+  })
+  // console.log(formData);
   const [image, setImage] = useState(undefined);
   const [uploading, setUploading] = useState(0);
   const [imageError, setImageError] = useState(false);
-  const [formData, setFormData] = useState({});
 
   useEffect(() => {
     if (image) {
-      console.log(image);
+      // console.log(image);
       handleUpload(image);
     }
   }, [image]);
 
   const handleUpload = async (image) => {
-    console.log(image);
+    // console.log(image);
     const storage = getStorage(app);
     const fileName = new Date().getTime() + image.name;
-    console.log(fileName);
+    // console.log(fileName);
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, image);
-    console.log(image);
+    console.log(uploadTask);
 
     uploadTask.on("state_changed", (snapshot) => {
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       setUploading(Math.round(progress));
-      console.log(progress);
-    });
+      // console.log(progress);
+    },
     (error) => {
       setImageError(true);
-    };
+    },
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
         setFormData({ ...formData, profilePic: downloadURL })
       );
-    };
+    }
+    );
   };
 
-  console.log(formData);
+  // console.log(formData);
 
   return (
     <div className="p-3 max-w-lg mx-auto">
@@ -63,7 +67,7 @@ export default function Profile() {
           onChange={(e) => setImage(e.target.files[0])}
         />
         <img
-          src={currentUser.profilePic}
+          src={formData.profilePic ||currentUser.profilePic}
           alt="profile"
           className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
           onClick={() => fileRef.current.click()}
