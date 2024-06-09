@@ -49,3 +49,25 @@ export const updateUser = async (req, res, next) => {
     next(error);
    }
 };
+
+
+export const deleteUser = async (req, res, next) => {
+    if (req.user._id !== req.params.id) {
+        throw new ApiError(401, "You can only delete your own profile");
+    }
+
+    try {
+        await User.findByIdAndDelete(req.params.id);
+        res
+        .status(201)
+        .json(
+            new ApiResponce(
+                201, 
+                { user: null },
+                "User deleted successfully", 
+            ));
+        
+    } catch (error) {
+        next(error);
+    }
+}
