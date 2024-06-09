@@ -30,7 +30,7 @@ export default function SignIn() {
             });
 
             const data = res.data;
-            console.log(data);
+            // console.log(data);
 
             if (data.success === false) {
               dispatch(signInFailure(data));
