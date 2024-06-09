@@ -128,3 +128,14 @@ export const googleAuth = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const signOut = (req, res) => {
+  res
+    .status(200)
+    .clearCookie("access_token")
+    .json({
+      success: true,
+      message: "User logged out successfully",
+    });
+}
