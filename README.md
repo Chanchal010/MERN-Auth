@@ -1,5 +1,5 @@
 
-```
+
 # MERN Authentication
 
 A full-stack MERN (MongoDB, Express, React, Node.js) application with authentication features.
@@ -25,7 +25,7 @@ Ensure you have the following installed on your local development machine:
 
 ```bash
 git clone https://github.com/Chanchal010/mern-auth.git
-```
+
 
 2. Navigate to the project directory:
 
