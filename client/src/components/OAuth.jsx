@@ -15,13 +15,13 @@ export default function OAuth() {
         try {
             const provider = new GoogleAuthProvider();
             const auth = getAuth(app);
-            const result = signInWithPopup(auth, provider);
+            const result = await signInWithPopup(auth, provider);
             // console.log(result);
 
             const res = await axios.post("/api/v1/auth/google-signin",  {
-                name: (await result).user.displayName,
-                email: (await result).user.email,
-                photo: (await result).user.photoURL
+                name: result.user.displayName,
+                email: result.user.email,
+                photo: result.user.photoURL
               },{
                 headers: {
                     'Content-Type': 'application/json'
