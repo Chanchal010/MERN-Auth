@@ -16,7 +16,7 @@ mongoose
 .then(() => {
     console.log("MongoDB connected");
 })
-.catch((err) => console.log(err));
+.catch((err) => console.log("mongo error",err));
 
 //directory for static files
 const __dirname = path.resolve();
