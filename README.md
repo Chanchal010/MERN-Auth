@@ -119,10 +119,14 @@ mern-auth
 This project is licensed under the MIT License.
 
 ## Contact
-Chanchal Bag - [Chanchal010](https://github.com/Chanchal010)
-E-mail - [chanchalbag112@gmail.com](chanchalbag112@gmail.com)
-LinkedIn - [https://www.linkedin.com/in/chanchal-bag-010c](https://www.linkedin.com/in/chanchal-bag-010c)
-Project Link - [https://github.com/Chanchal010/mern-auth](https://github.com/Chanchal010/mern-auth)
-visit App - [Auth App](https://mern-authentication-qk7b.onrender.com)
+-Chanchal Bag - [Chanchal010](https://github.com/Chanchal010)
+
+-E-mail - [chanchalbag112@gmail.com](chanchalbag112@gmail.com)
+
+-LinkedIn - [https://www.linkedin.com/in/chanchal-bag-010c](https://www.linkedin.com/in/chanchal-bag-010c)
+
+-Project Link - [https://github.com/Chanchal010/mern-auth](https://github.com/Chanchal010/mern-auth)
+
+-visit App - [Auth App](https://mern-authentication-qk7b.onrender.com)
 
 ---
