@@ -18,28 +18,29 @@ Ensure you have the following installed on your local development machine:
 
 - [Node.js](https://nodejs.org/)
 - [MongoDB](https://www.mongodb.com/)
-- npm (Node Package Manager) or yarn/bun
+- npm (Node Package Manager) or yarn
 
 ## Installation
 
 1. Clone the repository:
-
+```
 git clone https://github.com/Chanchal010/mern-auth.git
-
+```
 3. Navigate to the project directory:
-
+```
 cd mern-auth
-
+```
 3. Install server dependencies:
-
+```
 cd mern-auth
 npm install
-
+```
 4. Install client dependencies:
-
+```
 cd ../client
+```
 npm install
-
+```
 ## Configuration
 
 1. Create a `.env` file in the `backend` directory and add the following environment variables:
