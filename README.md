@@ -32,7 +32,11 @@ cd mern-auth
 3. Install server dependencies:
 ```
 cd mern-auth
+```
+```
 npm install
+```
+```
 yarn install
 ```
 4. Install client dependencies:
