@@ -114,9 +114,6 @@ mern-auth
 4. Push to the branch (`git push origin feature/your-feature-name`)
 5. Create a new Pull Request
 
-## License
-
-This project is licensed under the MIT License.
 
 ## Contact
 Chanchal Bag - [Chanchal010](https://github.com/Chanchal010)
@@ -128,5 +125,9 @@ LinkedIn - [https://www.linkedin.com/in/chanchal-bag-010c](https://www.linkedin.
 Project Link - [https://github.com/Chanchal010/mern-auth](https://github.com/Chanchal010/mern-auth)
 
 visit App - [Auth App](https://mern-authentication-qk7b.onrender.com)
+
+## License
+
+This project is licensed under the MIT License.
 
 ---
