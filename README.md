@@ -9,7 +9,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application with authentica
 - User registration and login
 - JWT-based authentication
 - Protected routes
-- Password hashing with bcrypt
+- Password hashing with bcryptjs
 - Persistent login with refresh tokens
 
 ## Prerequisites
@@ -18,34 +18,27 @@ Ensure you have the following installed on your local development machine:
 
 - [Node.js](https://nodejs.org/)
 - [MongoDB](https://www.mongodb.com/)
+- npm (Node Package Manager) or yarn/bun
 
 ## Installation
 
 1. Clone the repository:
 
-```bash
 git clone https://github.com/Chanchal010/mern-auth.git
 
+3. Navigate to the project directory:
 
-2. Navigate to the project directory:
-
-```bash
 cd mern-auth
-```
 
 3. Install server dependencies:
 
-```bash
-cd backend
+cd mern-auth
 npm install
-```
 
 4. Install client dependencies:
 
-```bash
-cd ../frontend
+cd ../client
 npm install
-```
 
 ## Configuration
 
