@@ -1,5 +1,4 @@
 
-
 # MERN Authentication
 
 A full-stack MERN (MongoDB, Express, React, Node.js) application with authentication features.
@@ -35,11 +34,17 @@ cd mern-auth
 cd mern-auth
 npm install
 ```
+yarn install
+```
 4. Install client dependencies:
 ```
 cd ../client
 ```
+```
 npm install
+```
+```
+yarn install
 ```
 ## Configuration
 
