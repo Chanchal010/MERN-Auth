@@ -119,8 +119,6 @@ mern-auth
 This project is licensed under the MIT License.
 
 ## Contact
-```
 [chanchal Bag](chanchal bag)
-```
 
 ---
