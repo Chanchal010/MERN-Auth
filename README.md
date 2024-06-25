@@ -41,7 +41,7 @@ yarn install
 ```
 4. Install client dependencies:
 ```
-cd ../client
+cd client
 ```
 ```
 npm install
@@ -51,56 +51,59 @@ yarn install
 ```
 ## Configuration
 
-1. Create a `.env` file in the `backend` directory and add the following environment variables:
+1. Create a `.env` file in the `root` directory named `mern-auth` and add the following environment variables:
 
 ```env
 MONGO_URI=<your-mongodb-uri>
 JWT_SECRET=<your-jwt-secret>
+PORT=<your-listening-server-port>
 ```
 
 ## Running the Application
 
 1. Start the backend server:
 
-```bash
-cd backend
+```
+cd mern-auth
 npm run dev
 ```
 
 2. Start the frontend development server:
 
-```bash
-cd frontend
-npm start
+```
+cd client
+npm run dev
 ```
 
-The application should now be running on `http://localhost:3000`.
+The application running on `https://mern-authentication-qk7b.onrender.com`.
 
 ## Project Structure
 
-```plaintext
-mern-auth/
-│
-├── backend/
-│   ├── config/
+```
+mern-auth
+│──  api/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
-│   ├── middleware/
-│   └── server.js
+│   ├── utils/
+│   ├── server.js
 │
-├── frontend/
+├── client/
 │   ├── public/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── services/
+│   │   ├── redux/
 │   │   ├── App.js
-│   │   └── index.js
+│   │   ├── firebase.js
+│   │   └── index.css
+│   │   ├── main.jsx
 │   └── package.json
 │
 ├── README.md
+├── index.html
 └── .gitignore
+└── package.json
 ```
 
 ## Contributing
